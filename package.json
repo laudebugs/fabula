@@ -1,22 +1,51 @@
 {
-  "name": "fabula",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "12.0.7",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@types/node": "16.11.12",
-    "@types/react": "17.0.37",
-    "eslint": "8.4.1",
-    "eslint-config-next": "12.0.7",
-    "typescript": "4.5.3"
-  }
+    "name": "fabula",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "prepare": "husky install",
+        "release": "standard-version",
+        "commit": "cz"
+    },
+    "dependencies": {
+        "@chakra-ui/react": "^1.7.3",
+        "@emotion/react": "^11.7.1",
+        "@emotion/styled": "^11.6.0",
+        "framer-motion": "^4.1.17",
+        "next": "12.0.7",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "reset-css": "^5.0.1"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^15.0.0",
+        "@commitlint/config-conventional": "^15.0.0",
+        "@types/node": "16.11.12",
+        "@types/react": "17.0.37",
+        "@typescript-eslint/parser": "^5.6.0",
+        "commitizen": "^4.2.4",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "8.4.1",
+        "eslint-config-airbnb": "^19.0.2",
+        "eslint-config-next": "12.0.7",
+        "husky": "^7.0.0",
+        "prettier": "^2.5.1",
+        "pretty-quick": "^3.1.2",
+        "semantic-release": "^18.0.1",
+        "standard-version": "^9.3.2",
+        "typescript": "^4.5.3"
+    },
+    "husky": {
+        "hooks": {
+            "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+        }
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
 }
